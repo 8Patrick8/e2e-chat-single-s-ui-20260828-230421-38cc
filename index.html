@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trinkgeld-Rechner</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="container">
+    <h1 class="app-title">Trinkgeld-Rechner</h1>
+
+    <form id="tip-form" novalidate>
+      <section class="card" aria-labelledby="input-heading">
+        <h2 id="input-heading" class="visually-hidden">Eingaben</h2>
+
+        <div class="field">
+          <label for="betrag">Betrag in €</label>
+          <input type="number" id="betrag" name="betrag" value="0" min="0" step="0.01" inputmode="decimal" autocomplete="off">
+        </div>
+
+        <div class="field">
+          <label for="prozent">Trinkgeld-Prozent (%)</label>
+          <input type="number" id="prozent" name="prozent" value="15" min="0" step="0.1" inputmode="decimal" autocomplete="off">
+        </div>
+
+        <div class="field">
+          <label for="personen">Personenzahl</label>
+          <input type="number" id="personen" name="personen" value="1" min="1" step="1" inputmode="numeric" autocomplete="off">
+        </div>
+
+        <p class="hint" id="personen-hint" hidden>Bitte eine Personenzahl von mindestens 1 eingeben.</p>
+      </section>
+
+      <section class="card" aria-labelledby="result-heading">
+        <h2 id="result-heading" class="visually-hidden">Ergebnisse</h2>
+
+        <div class="result-row">
+          <span class="result-label">Trinkgeld</span>
+          <output class="result-value" id="trinkgeld" for="betrag prozent">0,00 €</output>
+        </div>
+
+        <div class="result-row">
+          <span class="result-label">Gesamtbetrag</span>
+          <output class="result-value" id="gesamt" for="betrag prozent">0,00 €</output>
+        </div>
+
+        <div class="result-row">
+          <span class="result-label">Betrag pro Person</span>
+          <output class="result-value" id="pro-person" for="betrag prozent personen">0,00 €</output>
+        </div>
+      </section>
+    </form>
+  </main>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
